@@ -1,6 +1,9 @@
 name: Build APK
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -29,11 +32,11 @@ jobs:
 
       - name: Build APK
         run: |
-          cd project
+          cd project/MyBalanceAndroid
           gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: MyBalance-APK
-          path: project/app/build/outputs/apk/debug/app-debug.apk
+          path: project/MyBalanceAndroid/app/build/outputs/apk/debug/app-debug.apk
