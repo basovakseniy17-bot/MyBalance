@@ -28,7 +28,7 @@ jobs:
       - name: Extract project
         run: |
           mkdir project
-          unzip -q MyBalanceAndroidProject.zip -d project
+          unzip -q "MyBalanceAndroidProject (2).zip" -d project
 
       - name: Build APK
         run: |
